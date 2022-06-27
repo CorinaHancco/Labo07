@@ -9,11 +9,11 @@ int bic(int x, int m){
   return bis(x,m)^ m;//& (~(1 << (m - 1))));
 }
 
-/* Calcular x|y usando solo llamadas a las funciones bis y bic */
-/*int bool_or(int x, int y) {
-int resultado = __________ ;
-return resultado;
-}*/
+// Calcular x|y usando solo llamadas a las funciones bis y bic */
+int bool_or(int x, int y) {
+  int resultado = bis(x,y);
+  return resultado;
+}
 
 /* Calcula x^y usando solo llamadas a las funciones bis y bic */
 /*int bool_xor(int x, int y) {
