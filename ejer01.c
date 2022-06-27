@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int bis(int x, int m){
-  return (x | (1 << (m-1)));
+  return (x | m );//(1 << (m-1)));
 }
 
 int bic(int x, int m){
@@ -23,7 +23,7 @@ return resultado;
 
 int main(void){
   int r = bic(5,1);
-  int r2 = bis(10,2);
+  int r2 = bis(10,4);
   printf("%d\n",r);
   printf("%d\n",r2);
   return 0;
