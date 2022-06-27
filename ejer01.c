@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 int bis(int x, int m){
-  return (x | m );//(1 << (m-1)));
+  return (x | m );
 }
 
 int bic(int x, int m){
-  return bis(x,m)^ m;//& (~(1 << (m - 1))));
+  return bis(x,m)^ m;
 }
 
 // Calcular x|y usando solo llamadas a las funciones bis y bic */
@@ -15,16 +15,20 @@ int bool_or(int x, int y) {
   return resultado;
 }
 
-/* Calcula x^y usando solo llamadas a las funciones bis y bic */
-/*int bool_xor(int x, int y) {
-int resultado = __________;
-return resultado;
-}*/
+//Calcula x^y usando solo llamadas a las funciones bis y bic */
+int bool_xor(int x, int y) {
+  int resultado = bic(bis(x,y),bic(x,y)^x);
+  return resultado;
+}
 
 int main(void){
-  int r = bic(10,4);
-  int r2 = bis(10,4);
-  printf("%d\n",r);
+  int r1 = bis(10,4);
+  int r2 = bic(10,4);
+  int r3 = bool_or(15,4);
+  int r4 = bool_xor(15,4);
+  printf("%d\n",r1);
   printf("%d\n",r2);
+  printf("%d\n",r3);
+  printf("%d\n",r4);
   return 0;
 }
