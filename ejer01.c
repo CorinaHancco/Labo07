@@ -6,7 +6,7 @@ int bis(int x, int m){
 }
 
 int bic(int x, int m){
-  return (x & (~(1 << (m - 1))));
+  return bis(x,m)^ m;//& (~(1 << (m - 1))));
 }
 
 /* Calcular x|y usando solo llamadas a las funciones bis y bic */
@@ -22,7 +22,7 @@ return resultado;
 }*/
 
 int main(void){
-  int r = bic(5,1);
+  int r = bic(10,4);
   int r2 = bis(10,4);
   printf("%d\n",r);
   printf("%d\n",r2);
